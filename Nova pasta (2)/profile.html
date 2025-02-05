@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="estilo-2.css" rel="stylesheet">
+    <link href="custom-style.css" rel="stylesheet">
+    <title>Tzeeter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Coluna Esquerda -->
+            <nav class="col-lg-3 d-none d-lg-block">
+                <div class="d-grid gap-2">
+                    <div class="text-center mb-3">
+                        <i class="bi bi-twitter" style="font-size: 2rem;"></i>
+                    </div>
+                    <button class="btn btn-light text-start">
+                        <i class="bi bi-house me-2"></i> 
+                        <span class="d-none d-md-inline">Home</span>
+                    </button>
+                    <button class="btn btn-light text-start">
+                        <i class="bi bi-hash me-2"></i> 
+                        <span class="d-none d-md-inline">Explore</span>
+                    </button>
+                    <button class="btn btn-light text-start">
+                        <i class="bi bi-bell me-2"></i> 
+                        <span class="d-none d-md-inline">Notifications</span>
+                    </button>
+                    <button class="btn btn-light text-start">
+                        <i class="bi bi-envelope me-2"></i> 
+                        <span class="d-none d-md-inline">Messages</span>
+                    </button>
+                    <button class="btn btn-light text-start">
+                        <i class="bi bi-person me-2"></i> 
+                        <span class="d-none d-md-inline">Profile</span>
+                    </button>
+                    <button class="btn btn-light text-start">
+                        <i class="bi bi-three-dots me-2"></i> 
+                        <span class="d-none d-md-inline">More</span>
+                    </button>
+                </div>
+                <button class="btn btn-primary w-100 rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#tweetModal">
+                    <i class="bi bi-pencil-square"></i> 
+                    <span class="d-none d-md-inline">Tzeetar</span>
+                </button>
+            </nav>
+
+            <!-- Coluna Central -->
+            <main class="col-lg-6">
+                <header class="mt-3 d-flex align-items-center">
+                    <img src="usuario.jpeg" alt="Foto do usuário" class="rounded-circle me-3" style="width: 64px; height: 64px; object-fit: cover;">
+                    <h3>Profile</h3>
+                </header>
+                
+                <section class="mt-4">
+                    <form class="bg-light p-4 rounded" id="tzeet-form">
+                        <div class="mb-3">
+                            <textarea id="tzeet-input" class="form-control" rows="3" placeholder="O que você está pensando?" maxlength="140"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <button type="button" class="btn btn-light multimedia-btn me-2"><i class="bi bi-image"></i></button>
+                                <button type="button" class="btn btn-light multimedia-btn me-2"><i class="bi bi-camera-video"></i></button>
+                                <button type="button" class="btn btn-light multimedia-btn me-2"><i class="bi bi-geo-alt"></i></button>
+                                <button type="button" class="btn btn-light multimedia-btn me-2"><i class="bi bi-emoji-smile"></i></button>
+                                <button type="button" class="btn btn-light multimedia-btn me-2"><i class="bi bi-card-text"></i></button>
+                                <button type="button" class="btn btn-light multimedia-btn"><i class="bi bi-calendar-event"></i></button>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span id="char-counter" class="counter d-none">140</span>
+                                <span class="mx-2">|</span>
+                                <button type="submit" class="btn btn-primary" id="send-btn" disabled>Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal de Tzeetar -->
+    <div class="modal fade" id="tweetModal" tabindex="-1" aria-labelledby="tweetModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Novo Tzeet</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="modal-tzeet-input" class="form-control" rows="3" placeholder="O que você está pensando?" maxlength="140"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="modal-send-btn" disabled>Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="custom-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
